@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "223373914721",
+    "project_id": "dodotimer-ed059",
+    "storage_bucket": "dodotimer-ed059.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:223373914721:android:c20bd78c1d94fe196db020",
+        "android_client_info": {
+          "package_name": "eif.viko.lt.focustimer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "223373914721-8tmgq0hf74lbeglbf9p8jcqcuck9d13b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDK7YIXUoxEqiHSysjRNWBmZg2Fbby2Tow"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "223373914721-8tmgq0hf74lbeglbf9p8jcqcuck9d13b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

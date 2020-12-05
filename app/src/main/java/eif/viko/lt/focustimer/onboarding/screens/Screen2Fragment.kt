@@ -12,7 +12,7 @@ class Screen2Fragment : Fragment(R.layout.fragment_screen2) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         button.setOnClickListener {
-            findNavController().navigate(R.id.action_viewPagerFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_viewPagerFragment_to_loginFragment)
             onBoardingFinish()
         }
     }
@@ -20,7 +20,7 @@ class Screen2Fragment : Fragment(R.layout.fragment_screen2) {
     private fun onBoardingFinish(){
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
         val editor = sharedPref.edit()
-        editor.putBoolean("Finished", true)
+        editor.putBoolean("Finished3", true)
         editor.apply()
     }
 }

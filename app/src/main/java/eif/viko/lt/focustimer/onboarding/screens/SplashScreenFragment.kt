@@ -15,7 +15,7 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
         super.onViewCreated(view, savedInstanceState)
         Handler().postDelayed({
             if(onBoarding()){
-                findNavController().navigate(R.id.action_splashScreenFragment_to_homeFragment)
+                findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment)
             }else{
                 findNavController().navigate(R.id.action_splashScreenFragment_to_viewPagerFragment)
             }
@@ -24,6 +24,6 @@ class SplashScreenFragment : Fragment(R.layout.fragment_splash_screen) {
 
     private fun onBoarding():Boolean {
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
-        return sharedPref.getBoolean("Finished", false)
+        return sharedPref.getBoolean("Finished3", false)
     }
 }
