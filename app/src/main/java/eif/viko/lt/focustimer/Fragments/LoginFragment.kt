@@ -10,8 +10,8 @@ import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
 import eif.viko.lt.focustimer.Models.Item
-import eif.viko.lt.focustimer.ViewModels.ItemViewModel
 import eif.viko.lt.focustimer.ViewModels.TodoListViewModel
+import java.util.Random
 
 const val RC_SIGN_IN = 123
 
@@ -54,7 +54,7 @@ class LoginFragment: Fragment(){
                 val user = FirebaseAuth.getInstance().currentUser
                 Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show()
 
-                todoListViewModel.addToTodoList(Item("Thingie to do", "Yous gots to dos what yous gots to dos", "Sometime"))
+//                todoListViewModel.addToTodoList(Item(Random().nextLong() ,"Thingie to do", "Yous gots to dos what yous gots to dos", "Sometime"))
 
             } else {
 //                Toast.makeText(context, "requestCode failed (check loginFragment)", Toast.LENGTH_LONG).show()

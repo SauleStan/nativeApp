@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.FirebaseAuth
 import eif.viko.lt.focustimer.Adapters.ItemListAdapter
+import eif.viko.lt.focustimer.Models.Item
 import eif.viko.lt.focustimer.R
 import eif.viko.lt.focustimer.ViewModels.ItemViewModel
+import eif.viko.lt.focustimer.ViewModels.TodoListViewModel
 import kotlinx.android.synthetic.main.fragment_todo.*
+import java.util.*
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +33,8 @@ class ToDoFragment : Fragment() {
     private var param2: String? = null
 
     private lateinit var itemViewModel: ItemViewModel
+    private lateinit var todoListViewModel: TodoListViewModel
+    private val user = FirebaseAuth.getInstance().currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,11 +46,18 @@ class ToDoFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        var itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
+        itemViewModel = ViewModelProvider(this).get(ItemViewModel::class.java)
+        todoListViewModel = ViewModelProvider(this).get(TodoListViewModel::class.java)
 
         val itemListAdapter: ItemListAdapter by lazy { ItemListAdapter()}
         // Populated list with items
-        itemListAdapter.submitList(itemViewModel.getItems().value)
+//        todoListViewModel.addToTodoList(Item(Random().nextLong() ,"Thingie to do", "Yous gots to dos what yous gots to dos", "Sometime"))
+//        itemListAdapter.submitList(itemViewModel.getItems().value)
+        if(user != null) {
+            todoListViewModel.getTodoList().observe(viewLifecycleOwner, Observer {
+                itemListAdapter.submitList(it)
+            })
+        }
 
         item_recycleView.apply{
             // Set a LinearLayoutManager to handle Android

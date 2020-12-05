@@ -28,7 +28,7 @@ object TodoListRepository {
     fun removeItemFromTodoList(item: Item):Task<Void>{
         val document = db.
         collection("users/${user!!.uid}/todo_list").
-        document(item.title)
+        document("${item.id}")
 
         return document.delete()
     }
