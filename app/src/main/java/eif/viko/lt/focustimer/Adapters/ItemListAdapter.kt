@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.View.OnClickListener
+import android.widget.ImageView
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import eif.viko.lt.focustimer.Models.Item
@@ -40,17 +41,17 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
             if (adapterPosition == RecyclerView.NO_POSITION) return
 
             val clicked = getItem(adapterPosition)
+            interaction?.click_item(clicked)
         }
 
         fun bind(item: Item) = with(itemView) {
             item_title.text = item.title
             item_description.text = item.description
-            item_dueDate.text = item.dueDate
         }
     }
 
     interface Interaction {
-
+        fun click_item(item: Item);
     }
 
     private class ItemDC : DiffUtil.ItemCallback<Item>() {

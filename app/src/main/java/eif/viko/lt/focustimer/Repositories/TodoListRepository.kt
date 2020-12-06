@@ -16,7 +16,7 @@ object TodoListRepository {
         collection("users").
         document(user!!.uid).
         collection("todo_list").
-        document()
+        document("${item.id}")
 
         return document.set(item)
     }
