@@ -31,7 +31,7 @@ class LoginFragment: Fragment(){
 //            AuthUI.IdpConfig.PhoneBuilder().build(),
             AuthUI.IdpConfig.GoogleBuilder().build(),
 //            AuthUI.IdpConfig.FacebookBuilder().build(),
-//            AuthUI.IdpConfig.TwitterBuilder().build()
+            AuthUI.IdpConfig.TwitterBuilder().build()
         )
 
 // Create and launch sign-in intent
@@ -54,7 +54,6 @@ class LoginFragment: Fragment(){
                 val user = FirebaseAuth.getInstance().currentUser
                 Toast.makeText(context, "Success!", Toast.LENGTH_LONG).show()
 
-//                todoListViewModel.addToTodoList(Item(Random().nextLong() ,"Thingie to do", "Yous gots to dos what yous gots to dos", "Sometime"))
 
             } else {
 //                Toast.makeText(context, "requestCode failed (check loginFragment)", Toast.LENGTH_LONG).show()
