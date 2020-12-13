@@ -11,4 +11,5 @@
     <string name="add_button">ADD TODO</string>
     <string name="edit_text_title">TITLE</string>
     <string name="edit_text_descr">DESCRIPTION</string>
+    <string name="emoji"></string>
 </resources>

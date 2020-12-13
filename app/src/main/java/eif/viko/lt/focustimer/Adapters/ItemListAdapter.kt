@@ -47,6 +47,7 @@ class ItemListAdapter(private val interaction: Interaction? = null) :
         fun bind(item: Item) = with(itemView) {
             item_title.text = item.title
             item_description.text = item.description
+            emoji_text.text = String(Character.toChars(0x1F3F7))
         }
     }
 
