@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">DodoLaikmatis</string>
-    <string name="home">Laikmatis</string>
     <string name="todo">Darbai</string>
     <string name="screen1">Pasirink susikaupimo laiką</string>
     <string name="screen2">Užsirašyk darbus</string>
     <string name="next">SEKANTIS</string>
     <string name="finish">BAIGTA</string>
+    <string name="timer">Laikmatis</string>
+    <string name="add_button">PRIDĖTI</string>
+    <string name="edit_text_title">PAVADINIMAS</string>
+    <string name="edit_text_descr">APIBŪDINIMAS</string>
 </resources>

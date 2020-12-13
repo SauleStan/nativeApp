@@ -38,6 +38,7 @@ dependencies {
     implementation "androidx.viewpager2:viewpager2:1.0.0"
     implementation 'com.google.firebase:firebase-firestore:22.0.0'
     implementation 'com.google.firebase:firebase-auth:20.0.1'
+    implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
     testImplementation 'junit:junit:4.13.1'
     implementation 'com.firebaseui:firebase-ui-auth:6.4.0'
     implementation 'com.google.firebase:firebase-auth-ktx'
