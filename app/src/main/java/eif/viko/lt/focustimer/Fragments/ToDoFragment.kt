@@ -1,7 +1,5 @@
 package eif.viko.lt.focustimer.Fragments
 
-import android.app.AlertDialog
-import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -20,7 +18,6 @@ import eif.viko.lt.focustimer.R
 import eif.viko.lt.focustimer.ViewModels.ItemViewModel
 import eif.viko.lt.focustimer.ViewModels.TodoListViewModel
 import kotlinx.android.synthetic.main.fragment_todo.*
-import kotlinx.android.synthetic.main.list_item_layout.*
 import java.util.*
 
 class ToDoFragment : Fragment(), ItemListAdapter.Interaction {
@@ -82,29 +79,34 @@ class ToDoFragment : Fragment(), ItemListAdapter.Interaction {
     }
 
     override fun click_item(item: Item) {
-        val builder: AlertDialog.Builder? = activity?.let {
-            val builder = AlertDialog.Builder(it)
-            builder.apply {
-                setPositiveButton("delete",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // User clicked OK button
-                        todoListViewModel.removeItemFromTodoList(item)
-                        dialog.dismiss()
-                    })
-                setNegativeButton("cancel",
-                    DialogInterface.OnClickListener { dialog, id ->
-                        // User cancelled the dialog
-                        dialog.cancel()
-                    })
-            }
 
-        }
-        builder?.setMessage("Do you really want to delete this item?")
-            ?.setTitle("Delete \"${item.title}\"")
+        var customDialog = DeleteDialogFragment(todoListViewModel, item)
 
-        val dialog: AlertDialog? = builder?.create()
+        customDialog.show(activity?.supportFragmentManager!!, "customDialog")
 
-        dialog?.show()
+//        val builder: AlertDialog.Builder? = activity?.let {
+//            val builder = AlertDialog.Builder(it)
+//            builder.apply {
+//                setPositiveButton("delete",
+//                    DialogInterface.OnClickListener { dialog, id ->
+//                        // User clicked OK button
+//                        todoListViewModel.removeItemFromTodoList(item)
+//                        dialog.dismiss()
+//                    })
+//                setNegativeButton("cancel",
+//                    DialogInterface.OnClickListener { dialog, id ->
+//                        // User cancelled the dialog
+//                        dialog.cancel()
+//                    })
+//            }
+//
+//        }
+//        builder?.setMessage("Do you really want to delete this item?")
+//            ?.setTitle("Delete \"${item.title}\"")
+//
+//        val dialog: AlertDialog? = builder?.create()
+//
+//        dialog?.show()
 
     }
 }
