@@ -37,18 +37,25 @@ class ToDoFragment : Fragment(), ItemListAdapter.Interaction {
         todoListViewModel = ViewModelProvider(this).get(TodoListViewModel::class.java)
 
         // Add new to do
-        val button: Button? = activity?.findViewById(R.id.add_button)
+        val buttonDelete: Button? = activity?.findViewById(R.id.add_button)
         val titleText: EditText? = activity?.findViewById(R.id.edit_text_title)
         val descrText: EditText? = activity?.findViewById(R.id.edit_text_descr)
 
-        button?.setOnClickListener {
+        buttonDelete?.setOnClickListener {
             Toast.makeText(context, "Add Button clicked", Toast.LENGTH_LONG).show()
             val title = titleText?.text.toString()
             val description = descrText?.text.toString()
-            todoListViewModel.addToTodoList(Item(Random().nextLong(), title, description))
-            titleText?.text?.clear()
-            descrText?.text?.clear()
+
+            if (title.isBlank() && description.isBlank() || title.isBlank() || description.isBlank()){
+                var emptyFieldsDialog = EmptyDialogFragment()
+                emptyFieldsDialog.show(activity?.supportFragmentManager!!, "emptyFields")
+            } else {
+                todoListViewModel.addToTodoList(Item(Random().nextLong(), title, description))
+                titleText?.text?.clear()
+                descrText?.text?.clear()
+            }
         }
+
 
         val itemListAdapter: ItemListAdapter by lazy { ItemListAdapter(this)}
 
@@ -79,34 +86,8 @@ class ToDoFragment : Fragment(), ItemListAdapter.Interaction {
     }
 
     override fun click_item(item: Item) {
-
         var customDialog = DeleteDialogFragment(todoListViewModel, item)
-
         customDialog.show(activity?.supportFragmentManager!!, "customDialog")
-
-//        val builder: AlertDialog.Builder? = activity?.let {
-//            val builder = AlertDialog.Builder(it)
-//            builder.apply {
-//                setPositiveButton("delete",
-//                    DialogInterface.OnClickListener { dialog, id ->
-//                        // User clicked OK button
-//                        todoListViewModel.removeItemFromTodoList(item)
-//                        dialog.dismiss()
-//                    })
-//                setNegativeButton("cancel",
-//                    DialogInterface.OnClickListener { dialog, id ->
-//                        // User cancelled the dialog
-//                        dialog.cancel()
-//                    })
-//            }
-//
-//        }
-//        builder?.setMessage("Do you really want to delete this item?")
-//            ?.setTitle("Delete \"${item.title}\"")
-//
-//        val dialog: AlertDialog? = builder?.create()
-//
-//        dialog?.show()
 
     }
 }
