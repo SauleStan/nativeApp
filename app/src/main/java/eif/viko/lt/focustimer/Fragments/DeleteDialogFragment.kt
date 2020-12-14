@@ -1,5 +1,6 @@
 package eif.viko.lt.focustimer.Fragments
 
+import android.media.MediaPlayer
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,7 +22,7 @@ class DeleteDialogFragment(itemList: TodoListViewModel, item: Item): DialogFragm
         savedInstanceState: Bundle?
     ): View? {
         var rootView: View = inflater.inflate(R.layout.fragment_delete_dialog, container, false)
-
+        var mediaPlayer: MediaPlayer = MediaPlayer.create(context, R.raw.woosh)
         rootView.cancel_button.setOnClickListener {
             dismiss()
         }
@@ -29,6 +30,7 @@ class DeleteDialogFragment(itemList: TodoListViewModel, item: Item): DialogFragm
         rootView.delete_button.setOnClickListener {
             todoListViewModel.removeItemFromTodoList(item)
             dismiss()
+            mediaPlayer.start()
         }
 
 
