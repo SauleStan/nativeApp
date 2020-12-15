@@ -37,11 +37,11 @@ class ToDoFragment : Fragment(), ItemListAdapter.Interaction {
         todoListViewModel = ViewModelProvider(this).get(TodoListViewModel::class.java)
 
         // Add new to do
-        val buttonDelete: Button? = activity?.findViewById(R.id.add_button)
+        val button: Button? = activity?.findViewById(R.id.add_button)
         val titleText: EditText? = activity?.findViewById(R.id.edit_text_title)
         val descrText: EditText? = activity?.findViewById(R.id.edit_text_descr)
 
-        buttonDelete?.setOnClickListener {
+        button?.setOnClickListener {
             Toast.makeText(context, "Add Button clicked", Toast.LENGTH_LONG).show()
             val title = titleText?.text.toString()
             val description = descrText?.text.toString()
