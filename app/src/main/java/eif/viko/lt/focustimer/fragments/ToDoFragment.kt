@@ -1,4 +1,4 @@
-package eif.viko.lt.focustimer.Fragments
+package eif.viko.lt.focustimer.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
-import eif.viko.lt.focustimer.Adapters.ItemListAdapter
+import eif.viko.lt.focustimer.adapters.ItemListAdapter
 import eif.viko.lt.focustimer.Models.Item
 import eif.viko.lt.focustimer.R
 import eif.viko.lt.focustimer.ViewModels.ItemViewModel

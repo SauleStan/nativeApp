@@ -1,4 +1,4 @@
-package eif.viko.lt.focustimer.Fragments
+package eif.viko.lt.focustimer.fragments
 
 import android.media.MediaPlayer
 import android.os.Bundle

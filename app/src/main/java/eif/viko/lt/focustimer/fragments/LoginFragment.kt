@@ -1,4 +1,4 @@
-package eif.viko.lt.focustimer.Fragments
+package eif.viko.lt.focustimer.fragments
 
 import android.app.Activity
 import android.content.Intent
@@ -9,9 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.firebase.ui.auth.AuthUI
 import com.firebase.ui.auth.IdpResponse
 import com.google.firebase.auth.FirebaseAuth
-import eif.viko.lt.focustimer.Models.Item
 import eif.viko.lt.focustimer.ViewModels.TodoListViewModel
-import java.util.Random
 
 const val RC_SIGN_IN = 123
 

@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/timerFragment"
-        android:name="eif.viko.lt.focustimer.Fragments.HomeFragment"
+        android:name="eif.viko.lt.focustimer.fragments.TimerFragment"
         android:label="fragment_timer"
         tools:layout="@layout/fragment_timer">
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/todoFragment"
-        android:name="eif.viko.lt.focustimer.Fragments.ToDoFragment"
+        android:name="eif.viko.lt.focustimer.fragments.ToDoFragment"
         android:label="fragment_to_do"
         tools:layout="@layout/fragment_todo" />
     <fragment
@@ -42,7 +42,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="eif.viko.lt.focustimer.Fragments.LoginFragment"
+        android:name="eif.viko.lt.focustimer.fragments.LoginFragment"
         android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"

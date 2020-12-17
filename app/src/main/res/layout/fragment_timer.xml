@@ -4,35 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.HomeFragment">
+    tools:context=".fragments.TimerFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <include layout="@layout/content_timer"/>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="64dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_stop_24" />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/quote_recycleView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_pause"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|center"
-        android:layout_margin="64dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_pause_24" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton_end"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--        android:layout_margin="64dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_baseline_stop_24" />-->
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton_play"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"
-        android:layout_margin="64dp"
-        android:clickable="true"
-        android:src="@drawable/ic_baseline_play_arrow_24" />
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton_pause"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:layout_margin="64dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_baseline_pause_24" />-->
+
+<!--    <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+<!--        android:id="@+id/floatingActionButton_play"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|start"-->
+<!--        android:layout_margin="64dp"-->
+<!--        android:clickable="true"-->
+<!--        android:src="@drawable/ic_baseline_play_arrow_24" />-->
 </FrameLayout>
