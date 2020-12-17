@@ -43,7 +43,7 @@ class QuotesListAdapter(private val interaction: Interaction? = null) :
         }
 
         fun bind(item: Quote) = with(itemView) {
-            quote_text.text = item.quote_text
+            quote_text.text = item.text
             author.text = item.author
         }
     }
@@ -56,7 +56,7 @@ class QuotesListAdapter(private val interaction: Interaction? = null) :
         override fun areItemsTheSame(
             oldItem: Quote,
             newItem: Quote
-        ) = oldItem.quote_text == newItem.quote_text
+        ) = oldItem.text == newItem.text
 
         override fun areContentsTheSame(
             oldItem: Quote,
